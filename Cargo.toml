@@ -1,0 +1,19 @@
+[package]
+name          = "ntdll"
+version       = "0.0.1"
+
+links         = "ntdll"
+
+authors       = ["hina <a@hinaria.com>"]
+description   = "bindings to `ntdll.dll`."
+
+readme        = "readme.md"
+documentation = "https://docs.rs/ntdll"
+repository    = "https://github.com/hinaria/ntdll"
+
+keywords      = []
+categories    = []
+license       = "MIT/Apache-2.0"
+
+[dependencies]
+winapi        = { version = "0.3.5", features = ["ntdef"] }
