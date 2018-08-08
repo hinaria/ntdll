@@ -51,6 +51,7 @@ extern "system" {
 
 
 #[repr(C)]
+#[derive(Clone)]
 pub struct RTL_PROCESS_MODULE_INFORMATION {
     pub Section:          HANDLE,
     pub MappedBase:       PVOID,
@@ -65,6 +66,7 @@ pub struct RTL_PROCESS_MODULE_INFORMATION {
 }
 
 #[repr(C)]
+#[derive(Clone)]
 pub struct RTL_PROCESS_MODULES {
     pub NumberOfModules: ULONG,
     pub Modules:         [RTL_PROCESS_MODULE_INFORMATION; 0],
@@ -75,6 +77,7 @@ pub type PRTL_PROCESS_MODULE_INFORMATION = *mut RTL_PROCESS_MODULE_INFORMATION;
 pub type PRTL_PROCESS_MODULES            = *mut RTL_PROCESS_MODULES;
 
 #[repr(C)]
+#[derive(Clone)]
 pub struct SYSTEM_PROCESS_INFORMATION {
     pub NextEntryOffset:              ULONG,
     pub NumberOfThreads:              ULONG,
@@ -113,12 +116,14 @@ pub struct SYSTEM_PROCESS_INFORMATION {
 }
 
 #[repr(C)]
+#[derive(Clone)]
 pub struct CLIENT_ID {
     pub UniqueProcess: HANDLE,
     pub UniqueThread:  HANDLE,
 }
 
 #[repr(C)]
+#[derive(Clone)]
 pub struct SYSTEM_THREAD_INFORMATION {
     pub KernelTime:      LARGE_INTEGER,
     pub UserTime:        LARGE_INTEGER,
